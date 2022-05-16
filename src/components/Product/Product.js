@@ -12,12 +12,12 @@ const Product = props => {
         <img 
           className={styles.image}
           alt={props.title}
-          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props[0].name}--${props[0].color}.jpg`} />
+          src={`${process.env.PUBLIC_URL}/images/products/shirt-${props.name}--${props.colors[0]}.jpg`} />
       </div>
       <div>
         <header>
-          <h2 className={styles.name}>{props[0].title}</h2>
-          <span className={styles.price}>{props[0].basePrice}</span>
+          <h2 className={styles.name}>{props.title}</h2>
+          <span className={styles.price}>{props.basePrice}</span>
         </header>
         <form>
           <div className={styles.sizes}>
