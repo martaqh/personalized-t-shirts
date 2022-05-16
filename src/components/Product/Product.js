@@ -5,7 +5,6 @@ import productsData from '../../data/products';
 //import PropTypes from 'prop-types';
 
 const Product = props => {
-  console.log(props.currentSize);
   return (
     <article className={styles.product}>
       <div className={styles.imageContainer}>
@@ -23,13 +22,29 @@ const Product = props => {
           <div className={styles.sizes}>
             <h3 className={styles.optionLabel}>Sizes</h3>
             <ul className={styles.choices}>
-              {props.sizes.map(size => <li><button type="button" className={clsx(styles.choices, props.size === size.name && styles.active)}>{size.name}</button></li>)}
+              {props.sizes.map(size =>
+              <li key={size}>
+                <button
+                  type="button"
+                  className={clsx(styles.choices, props.size === size.name && styles.active)}
+                  onClick={props.actionSize(size.name)}
+                >{size.name}
+                </button>
+              </li>)}
             </ul>
           </div>
           <div className={styles.colors}>
             <h3 className={styles.optionLabel}>Colors</h3>
             <ul className={styles.choices}>
-              {props.colors.map(color => <li><button type="button" className={clsx(styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()], color === props.color && styles.active)} /></li>)}
+              {props.colors.map(color =>
+              <li key={color}>
+                <button
+                  type="button"
+                  className={clsx(styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()], color === props.color && styles.active)}
+                  onClick={props.actionColor(color)}
+                  >
+                </button>
+                </li>)}
             </ul>
           </div>
           <Button className={styles.button}>
