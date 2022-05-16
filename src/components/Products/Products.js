@@ -4,12 +4,18 @@ import Product from '../Product/Product';
 
 const Products = () => {
   const [products]  = useState(productsData);
+  console.log(products);
+  const [currentColor] = useState(productsData[0].colors[0]);
+  console.log(currentColor);
+  const [currentSize] = useState(productsData[0].sizes[0].name);
+  console.log(currentSize);
 
   return (
     <section>
-      {products.map(product => <Product {...products} />)}
+      {products.map(product => <Product key={products.id} {...products} />)}
     </section>
   );
 };
+
 
 export default Products;
