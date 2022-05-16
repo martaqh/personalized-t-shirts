@@ -12,7 +12,7 @@ const Products = () => {
 
   return (
     <section>
-      {products.map(product => <Product key={product.id} {...product} />)}
+      {products.map(product => <Product size={currentSize} color={currentColor} key={product.id} {...product} />)}
     </section>
   );
 };
