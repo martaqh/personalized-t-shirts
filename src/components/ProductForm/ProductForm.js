@@ -1,6 +1,7 @@
 import styles from './ProductForm.module.scss';
 import Button from '../Button/Button';
 import OptionSize from '../OptionSize/OptionSize';
+import OptionColor from '../OptionColor/OptionColor';
 import clsx from 'clsx';
 import shortid from 'shortid';
 
@@ -20,20 +21,12 @@ const ProductForm = props => {
             actionSize={props.actionSize}
             currentSize={props.currentSize}
           ></OptionSize>
-          <div className={styles.colors}>
-            <h3 className={styles.optionLabel}>Colors</h3>
-            <ul className={styles.choices}>
-              {props.colors.map(color =>
-              <li key={color}>
-                <button
-                  type="button"
-                  className={clsx(styles['color' + color[0].toUpperCase() + color.substr(1).toLowerCase()], color === props.currentColor && styles.active)}
-                  onClick={() => props.actionColor(color)} key={shortid()}
-                  >
-                </button>
-                </li>)}
-            </ul>
-          </div>
+          <OptionColor
+            colors={props.colors}
+            actionColor={props.actionColor}
+            currentColor={props.currentColor}
+          >
+          </OptionColor>
           <Button className={styles.button}>
             <span className="fa fa-shopping-cart" />
           </Button>
