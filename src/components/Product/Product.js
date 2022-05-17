@@ -18,7 +18,6 @@ const Product = props => {
     return props.basePrice + addPrice;
   }
 
-  
   return (
     <article className={styles.product}>
       <ProductImage name={props.name} title={props.title} color={currentColor}></ProductImage>

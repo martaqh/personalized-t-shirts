@@ -2,8 +2,6 @@ import styles from './ProductForm.module.scss';
 import Button from '../Button/Button';
 import OptionSize from '../OptionSize/OptionSize';
 import OptionColor from '../OptionColor/OptionColor';
-import clsx from 'clsx';
-import shortid from 'shortid';
 
 const ProductForm = props => {
 
