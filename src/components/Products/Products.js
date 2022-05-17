@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import shortid from 'shortid';
 import productsData from '../../data/products';
 import Product from '../Product/Product';
 
