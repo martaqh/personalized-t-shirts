@@ -19,7 +19,8 @@ const Product = props => {
 
   const resumeProduct = e => {
     e.preventDefault();
-    console.log('Name: ' + props.name);
+    console.log('Name: ' + props.name)
+    console.log('Price: ' + getPrice());
     console.log('Size: ' + currentSize);
     console.log('Color: ' + currentColor);
   }
