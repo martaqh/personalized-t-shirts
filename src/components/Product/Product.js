@@ -8,9 +8,9 @@ import ProductForm from '../ProductForm/ProductForm';
 
 const Product = props => {
 
-  const [currentColor, setCurrentColor] = useState(props.data[0].colors[0]);
-  const [currentSize, setCurrentSize] = useState(props.data[0].sizes[0].name);
-  
+  const [currentColor, setCurrentColor] = useState(props.colors[0]);
+  const [currentSize, setCurrentSize] = useState(props.sizes[0].name);
+  console.log(currentColor, currentSize)
   
   const getPrice = () =>{
     let chosenSizeData = props.sizes.find(elem => elem.name === currentSize);
